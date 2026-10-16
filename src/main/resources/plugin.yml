@@ -1,0 +1,14 @@
+name: EndSword
+version: 1.0.0
+main: com.example.endsword.EndSwordPlugin
+api-version: '1.21.11'
+description: Craftable End Sword with Dragon Breath and Teleport abilities.
+commands:
+  endsword:
+    description: Give yourself the End Sword (admin).
+    usage: /endsword [reload|reset|status|debug]
+    permission: endsword.give
+permissions:
+  endsword.give:
+    description: Allows /endsword
+    default: op

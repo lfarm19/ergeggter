@@ -1,0 +1,22 @@
+# ---------------- Abominable Great Saber settings ----------------
+
+# How many Abominable Great Sabers can EVER be crafted on this server.
+# Use -1 for unlimited. (Swords given with /endsword don't count.)
+max-crafts: 3
+
+# Send a chat announcement to everyone when the sword is crafted.
+announce-craft: true
+
+# Placeholders: {player}  {crafted} (total crafted so far)  {max}  {remaining}
+# Use & color codes, e.g. &5 = dark purple, &d = light purple, &l = bold.
+craft-announcement: "&5&lThe &d&lAbominable Great Saber &5&lhas been crafted by &d&l{player}&5&l! &7({remaining} left)"
+
+# Shown when someone tries to craft it after the limit is reached.
+limit-reached-message: "&cThe Abominable Great Saber can't be crafted any more."
+
+# ---------------- Optional resource pack model ----------------
+# Not needed for the Blades of Majestica pack (it matches the sword's name).
+# Leave blank unless you use a different pack.
+item-model: ""
+custom-model-data-string: ""
+custom-model-data-number: 0
