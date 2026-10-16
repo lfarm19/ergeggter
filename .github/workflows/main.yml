@@ -1,0 +1,27 @@
+name: Build EndSword
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build
+        run: mvn -B clean package
+      - name: Verify the jar contains the plugin code
+        run: |
+          echo "---- jar contents ----"
+          jar tf target/EndSword.jar
+          jar tf target/EndSword.jar | grep -q 'com/example/endsword/EndSwordPlugin.class' || { echo "ERROR: EndSwordPlugin.class is missing - EndSwordPlugin.java is in the wrong folder"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EndSword
+          path: target/EndSword.jar
